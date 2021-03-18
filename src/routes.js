@@ -1,10 +1,11 @@
-import { Router } from 'express';
+const { Router } = require('express');
+const TaskController = require('./app/controllers/TaskController');
 
-import authMiddleware from './app/middlewares/auth';
+const SessionController = require('./app/controllers/SessionController');
 
-import UserController from './app/controllers/UserController';
-import SessionController from './app/controllers/SessionController';
-import TaskController from './app/controllers/TaskController';
+const UserController = require('./app/controllers/UserController');
+
+const authMiddleware = require('./app/middlewares/auth');
 
 const routes = new Router();
 
@@ -22,4 +23,4 @@ routes.get('/tasks', TaskController.index);
 routes.put('/tasks/:task_id', TaskController.update);
 routes.delete('/tasks/:task_id', TaskController.delete);
 
-export default routes;
+module.exports = routes;

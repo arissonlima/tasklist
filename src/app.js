@@ -1,9 +1,10 @@
-import express from 'express';
-import cors from 'cors';
-import routes from './routes';
-
 // Importando a database
-import './database';
+require('./database');
+
+const cors = require('cors');
+
+const express = require('express');
+const routes = require('./routes');
 
 class App {
   constructor() {
@@ -23,4 +24,4 @@ class App {
   }
 }
 
-export default new App().server;
+module.exports = new App().server;

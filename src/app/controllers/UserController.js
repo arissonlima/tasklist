@@ -1,4 +1,4 @@
-const * as Yup = require('yup');
+const Yup = require('yup');
 const User = require('../models/User');
 
 class UserController {
